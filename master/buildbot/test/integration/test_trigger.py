@@ -54,6 +54,8 @@ class TriggeringMaster(RunMasterBase):
 
     @defer.inlineCallbacks
     def setup_config(self, addFailure=False):
+        self.timeout = 10
+        
         c = {}
         from buildbot.config import BuilderConfig
         from buildbot.plugins import schedulers
